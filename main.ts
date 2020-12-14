@@ -33,9 +33,65 @@ function nuage (pluie: boolean, power: number) {
         }
         basic.clearScreen()
         basic.pause(1600)
+        led.unplot(1, 0)
+        led.unplot(2, 0)
+        led.unplot(3, 0)
+        led.unplot(0, 1)
+        led.unplot(1, 2)
+        led.unplot(2, 2)
+        led.unplot(3, 2)
+        led.unplot(4, 1)
+        led.unplot(4, 2)
+        led.unplot(4, 3)
+        led.unplot(3, 4)
+        led.unplot(2, 3)
+        led.unplot(1, 4)
+        led.unplot(0, 3)
+        basic.pause(1000)
+        led.plot(0, 0)
+        led.plot(1, 0)
+        led.plot(2, 0)
+        led.unplot(3, 0)
+        led.unplot(4, 0)
+
+        //led.unplot(3, 1)
+        /*
+        led.plot(0, 1)
+        led.plot(1, 2)
+        
+        led.plot(0, 1)
+        led.plot(1, 2)
+
+        led.plot(2, 2)
+        led.plot(3, 2)
+        
+        led.plot(4, 2)*/
     }
 }
+function doSomething (move: boolean) {
+    if (move) {
+        for (let value of list2) {
+            led.toggle(value, 0)
+        }
+        basic.pause(1000)
+        for (let value of list) {
+            led.toggle(value, 0)
+        }
+        basic.pause(1000)
+        for (let value of list3) {
+            led.toggle(value, 1)
+        }
+        basic.pause(1000)
+        led.toggle(0, 1)
+    }
+}
+let list3: number[] = []
+let list2: number[] = []
+let list: number[] = []
+list = [0, 1, 2, 3]
+list2 = [0, 1, 2]
+list3 = [0, 4]
 basic.forever(function () {
-    basic.showNumber(envirobit.getTemperature())
+    doSomething(false)
     nuage(true, 10)
 })
