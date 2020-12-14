@@ -1,0 +1,38 @@
+function nuage (pluie: boolean) {
+    if (pluie) {
+        led.plot(1, 0)
+        led.plot(2, 0)
+        led.plot(3, 0)
+        led.plot(0, 1)
+        led.plot(1, 2)
+        led.plot(2, 2)
+        led.plot(3, 2)
+        led.plot(4, 1)
+        led.plot(4, 2)
+        led.plot(4, 3)
+        led.plot(3, 4)
+        led.plot(2, 3)
+        led.plot(1, 4)
+        led.plot(0, 3)
+        basic.pause(600)
+        led.unplot(1, 0)
+        led.unplot(2, 0)
+        led.unplot(3, 0)
+        led.unplot(0, 1)
+        led.unplot(1, 2)
+        led.unplot(2, 2)
+        led.unplot(3, 2)
+        led.unplot(4, 1)
+        led.unplot(4, 2)
+        led.unplot(4, 3)
+        led.unplot(3, 4)
+        led.unplot(2, 3)
+        led.unplot(1, 4)
+        led.unplot(0, 3)
+        basic.pause(1000)
+    }
+}
+let RainON = false
+basic.forever(function () {
+    nuage(true)
+})
